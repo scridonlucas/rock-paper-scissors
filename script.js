@@ -1,6 +1,8 @@
 let computerScore = 0;
 let playerScore = 0;
 
+const rockBtn = document.querySelector(".rock-button");
+
 function getComputerChoice() {
     let number = Math.floor(Math.random() * 3);
     if(number === 0) {
@@ -52,16 +54,4 @@ function getPlayerChoice() {
 function game() {
     computerScore = 0;
     playerScore = 0;
-    for(let i = 0; i < 5; i++) {
-        let player = getPlayerChoice();
-        let computer = getComputerChoice();
-        console.log(`${playRound(player, computer)}, player score: ${playerScore}, computer score: ${computerScore}`);
-    }
-    if(playerScore > computerScore) {
-        console.log("Player Wins!");
-    } else {
-        console.log("Computer Wins!");
-    }
 }
-
-game();
